@@ -8,7 +8,7 @@
 
 If you are using your own **PowerShell7** terminal, it is necessary to make the connection and configure the subscription as follows:
 
-**az login**
+`az login`
 
 **az aks install-cli**
 
