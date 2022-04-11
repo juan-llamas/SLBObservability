@@ -28,10 +28,19 @@ Validate k8s connection:
 
 **kubectl create ns monitoring**
 
-## Step4: create pod def yaml file for hello springboot application developed using micrometer config.
+## Step5: create pod def yaml file for hello springboot application developed using micrometer config.
 
 _[helloworld.yaml](https://github.com/juan-llamas/SLBObservability/blob/main/helloworld.yaml "helloworld.yaml")_
 
-## Step5: Deploy yaml file for hello springboot
+## Step6: Deploy yaml file for hello springboot
 
 **kubectl apply -f helloworld.yaml**
+
+## Step7: Verify for running pod details
+
+**kubectl get pods -n monitoring**
+
+**kubectl get all -n monitoring**
+
+## Step8: Check for accessing application and metrics being pushed
+
