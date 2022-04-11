@@ -10,9 +10,9 @@ If you are using your own **PowerShell7** terminal, it is necessary to make the 
 
 `az login`
 
-**az aks install-cli**
+`az aks install-cli`
 
-**az account set --subscription** _subscription ID_
+ `az account set --subscription _subscription ID_`
 
 ## Step3: Run the below command to lets get the access credentials for an AKS cluster and merges them into the kubeconfig file
 
