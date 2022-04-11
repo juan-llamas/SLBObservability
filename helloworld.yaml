@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld-springboot
+  namespace: monitoring
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: helloworld-springboot
+  template:
+    metadata:
+      labels:
+        app: helloworld-springboot
+    spec:
+      containers:
+      - name: helloworld-springboot
+        image: selluru/hellospringboot
+        ports:
+        - containerPort: 8080
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: helloworld-springboot
+  namespace: monitoring
+  labels:
+    app: helloworld-springboot
+spec:
+  type: LoadBalancer
+  ports:
+  - name: metrics
+    port: 8080
+    targetPort: 8080
+    protocol: TCP
+  selector:
+    app: helloworld-springboot

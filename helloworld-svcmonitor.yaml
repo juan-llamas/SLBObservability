@@ -1,0 +1,17 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: helloworld-springboot
+  namespace: monitoring
+  labels:
+    app: helloworld-springboot #target helloworld pods
+    name: helloworld-springboot
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      app: helloworld-springboot #target helloworld service
+  endpoints:
+    - path: /metrics
+      port: metrics
+      interval: 15s
